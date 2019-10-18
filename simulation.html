@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>HEAT TRANSFER</title>
+
+    <style>
+        body {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+<button onclick="asd()">Hint</button>
+<h1>Heat Transfer Through Single Material Slab</h1>
+<!--<input type="text" placeholder="name" id="name">-->
+<!--<input type="number" placeholder="rank" id="rank">-->
+<canvas id="myCanvas" style="width: 700px;height: 400px;border: 2px solid blue"></canvas>
+<div style="margin-left: px">
+
+    <button id="btn3" class="design" onclick="main3()" >Draw Heat Source</button>
+    <button id="btn4" class="design" onclick="main4()" >Draw Slab</button>
+    <button id="btn5" class="design" onclick="main5()" >Start Heating</button>
+    <button id="btn6" class="design" onclick="main6()" >Effect After Heating </button>
+
+</div>
+<br>
+<div >
+    <h2 id="res"></h2>
+</div>
+<script>
+function asd() {
+    alert("First Click on the button given below the " +
+        "rectangular box then click inside rectangle box immediatly");
+}
+var canvas=document.getElementById("myCanvas");
+var context=canvas.getContext("2d");
+var i;
+
+
+    function mouseevt(x,y) {
+
+        if(i===3){
+            context.beginPath();
+            context.arc(50, 75, 20, 0, 2 * Math.PI);
+            context.stroke();
+            context.fillStyle="red";
+            context.fill();
+
+        }
+        if(i===4){
+            context.fillStyle = "brown";
+            context.fillRect(200, 30, 50,100);
+
+
+
+        }
+
+
+        if(i===5){
+            context.beginPath();
+            context.arc(50, 75, 20, 0, 2 * Math.PI);
+            context.stroke();
+            context.fillStyle="#ff8000";
+            context.fill();
+
+
+            context.beginPath();
+            context.moveTo(60, 75);
+            context.lineTo(130, 60);
+            context.strokeStyle = "orange";
+            context.lineWidth = 0.5;
+            context.stroke();
+
+            context.beginPath();
+            context.moveTo(60, 60);
+            context.lineTo(130, 45);
+            context.strokeStyle = "orange";
+            context.lineWidth = 0.5;
+            context.stroke();
+
+            context.beginPath();
+            context.moveTo(60, 80);
+            context.lineTo(130, 85);
+            context.strokeStyle = "orange";
+            context.lineWidth = 0.5;
+            context.stroke();
+
+            context.beginPath();
+            context.moveTo(60, 90);
+            context.lineTo(130, 105);
+            context.strokeStyle = "orange";
+            context.lineWidth = 0.5;
+            context.stroke();
+        }
+        else if(i===6){
+            context.fillStyle = "brown";
+            context.fillRect(200, 30, 50,100);
+
+            context.fillStyle = "orange";
+            context.fillRect(193, 30, 7,100);
+
+            context.fillStyle = "blue";
+            context.fillRect(250, 30, 7,100);
+
+        }
+    }
+
+
+
+
+    function main3() {
+        i = 3;
+        btn3.style.backgroundColor='#57A0D3';
+        btn3.style.color='white';
+        btn3.style.border='2px solid blue';
+        document.getElementById("res").innerHTML='Refer the above circle as a Heat Source';
+    }
+    function main4() {
+        i=4;
+        btn4.style.backgroundColor='#57A0D3';
+        btn4.style.color='white';
+        btn4.style.border='2px solid blue';
+        document.getElementById("res").innerHTML='Refer the above rectangle as a SLAB';
+    }
+    function main5() {
+
+        i=5;
+        btn5.style.backgroundColor='#57A0D3';
+        btn5.style.color='white';
+        btn5.style.border='2px solid blue';
+        document.getElementById("res").innerHTML='The Source is start heating';
+    }
+function main6() {
+
+    i=6;
+    btn6.style.backgroundColor='#57A0D3';
+    btn6.style.color='white';
+    btn6.style.border='2px solid blue';
+    document.getElementById("res").innerHTML='The Slab after heating ,The temperature is different in LHS wall and RHS wall of the SLAB';
+}
+
+</script>
+
+<script src="js/mouseevent.ob.js"></script>
+</body>
+
+</html>
